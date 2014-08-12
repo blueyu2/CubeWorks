@@ -1,0 +1,8 @@
+# Item localizations
+# item.cubeworks:example.name=Example Item
+
+# Block localizations
+# tile.cubeworks:example.name=Example Block
+
+# Creative Tab localization
+itemGroup.cubeworks=CubeWorks
