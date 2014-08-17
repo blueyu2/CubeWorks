@@ -18,6 +18,8 @@ public class ConfigurationHandler {
     //Block Attributes
     public static String configAttributes = "general.attributes";
     public static String[] setBlockLight;
+    public static String[] setBlockHardness;
+    public static String[] setBlockResistance;
     public static void init(File configFile){
         //Create the configuration object from the given configuration file
         if(configuration == null){
@@ -36,6 +38,8 @@ public class ConfigurationHandler {
         blocksToAdd = configuration.getStringList(StatCollector.translateToLocal("general.blocksToAdd.name"), Configuration.CATEGORY_GENERAL, new String[]{""}, StatCollector.translateToLocal("general.blocksToAdd.comment"));
         itemsToAdd = configuration.getStringList(StatCollector.translateToLocal("general.itemsToAdd.name"), Configuration.CATEGORY_GENERAL, new String[]{""}, StatCollector.translateToLocal("general.itemsToAdd.comment"));
         setBlockLight = configuration.getStringList(StatCollector.translateToLocal("general.setBlockLight.name"), configAttributes, new String[]{""}, StatCollector.translateToLocal("general.setBlockLight.comment"));
+        setBlockHardness = configuration.getStringList(StatCollector.translateToLocal("general.setBlockHardness.name"), configAttributes, new String[]{""}, StatCollector.translateToLocal("general.setBlockHardness.comment"));
+        setBlockResistance = configuration.getStringList(StatCollector.translateToLocal("general.setBlockResistance.name"), configAttributes, new String[]{""}, StatCollector.translateToLocal("general.setBlockResistance.comment"));
         if(configuration.hasChanged()){
             configuration.save();
         }

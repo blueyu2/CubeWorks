@@ -26,15 +26,15 @@ public class AttributesHelper {
     //Warning Handling
     public static void addWarning(String string, String message){
         String warnBase = "'" + string + "' - ";
-        LogHelper.warn(warnBase + message);
         if (!warnings.contains(warnBase + message)){
+            LogHelper.warn(warnBase + message);
             warnings.add(warnBase + message);
         }
     }
 
     public static boolean hasErrors(String string){
         if (string.equals("")) {
-            addWarning(string, StatCollector.translateToLocal("warning.empty"));
+            //addWarning(string, StatCollector.translateToLocal("warning.empty"));
             return true;
         }
         if (!doesBlockExist(string)){
@@ -66,11 +66,6 @@ public class AttributesHelper {
         if (AttributesHelper.getBlockName(string).equals(blockName)){
             try{
                 result = Float.parseFloat(split(string)[1].replaceAll("\\s",""));
-                if (result < 0F || result > 15F){
-                    addWarning(string, StatCollector.translateToLocal("warning.exceed"));
-                    result = -1F;
-                    return result;
-                }
             }catch (Exception e){
                 addWarning(string, StatCollector.translateToLocal("warning.parse"));
                 return result;

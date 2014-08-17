@@ -3,11 +3,16 @@ general.attributes=Block Attributes
 
 general.blocksToAdd.name=Blocks
 general.itemsToAdd.name=Items
-general.setBlockLight.name=Light Level
+general.setBlockLight.name=Block Luminance
+general.setBlockHardness.name=Block Hardness
+general.setBlockResistance.name=Block Resistance
 
 general.blocksToAdd.comment=Put the name(s) of the block you want to add (EX: 'myBlock')
 general.itemsToAdd.comment=Put the name(s) of the item you want to add (EX: 'myItem')
-general.setBlockLight.comment=Put the name(s) of the block, and the desired light level (EX: 'myBlock=15')
+general.setBlockLight.comment=Put the name(s) of the block, and the desired luminance (EX: 'myBlock=15')
+general.setBlockHardness.comment=Put the name(s) of the block, and the desired hardness (EX: 'myBlock=1.5')
+general.setBlockResistance.comment=Put the name(s) of the block, and the desired hardness (EX: 'myBlock=7.5')
+
 
 # Warnings
 warning.empty=Value is empty

@@ -4,6 +4,7 @@ import com.blueyu2.cubeworks.CubeWorks;
 import com.blueyu2.cubeworks.block.BlockCW;
 import com.blueyu2.cubeworks.handler.ConfigurationHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.material.Material;
 
 /**
  * Created by Blueyu2 on 7/1/2014.
@@ -15,7 +16,11 @@ public class ModBlocks {
             if (ConfigurationHandler.blocksToAdd[i].equals("")) {
                 continue;
             }
-            GameRegistry.registerBlock(new BlockCW(ConfigurationHandler.blocksToAdd[i]), ConfigurationHandler.blocksToAdd[i]);
+            GameRegistry.registerBlock(new BlockCW(ConfigurationHandler.blocksToAdd[i], getMaterialFromConfig()), ConfigurationHandler.blocksToAdd[i]);
         }
+    }
+    //TODO WIP
+    public static Material getMaterialFromConfig(){
+        return Material.rock;
     }
 }
