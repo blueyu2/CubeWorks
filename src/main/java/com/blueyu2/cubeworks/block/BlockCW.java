@@ -2,6 +2,8 @@ package com.blueyu2.cubeworks.block;
 
 import com.blueyu2.cubeworks.CubeWorks;
 import com.blueyu2.cubeworks.creativetab.CreativeTab;
+import com.blueyu2.cubeworks.handler.ConfigurationHandler;
+import com.blueyu2.cubeworks.utility.AttributesHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -20,6 +22,23 @@ public class BlockCW extends Block {
         this.setCreativeTab(CreativeTab.CubeWorksTab);
         this.setHardness(1.5F);
         this.setStepSound(soundTypeStone);
+        this.setLightLevel(this.getLightLevelFromConfig());
+    }
+
+    public Float getLightLevelFromConfig(){
+        float result = 0F;
+        for (int i =0; i < ConfigurationHandler.setBlockLight.length; i++){
+            result = AttributesHelper.getAttribute(ConfigurationHandler.setBlockLight[i], this);
+
+            if (result == -1F) {
+                result = 0F;
+                continue;
+            }
+
+            result = result / 15F;
+            break;
+        }
+        return result;
     }
 
     @Override

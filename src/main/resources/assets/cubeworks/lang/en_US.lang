@@ -1,3 +1,21 @@
+# Configuration
+general.attributes=Block Attributes
+
+general.blocksToAdd.name=Blocks
+general.itemsToAdd.name=Items
+general.setBlockLight.name=Light Level
+
+general.blocksToAdd.comment=Put the name(s) of the block you want to add (EX: 'myBlock')
+general.itemsToAdd.comment=Put the name(s) of the item you want to add (EX: 'myItem')
+general.setBlockLight.comment=Put the name(s) of the block, and the desired light level (EX: 'myBlock=15')
+
+# Warnings
+warning.empty=Value is empty
+warning.noBlock=Block doesn't exist
+warning.parse=Attribute cannot be parsed
+warning.exceed=Attribute exceeds requirements
+chat.warn=WARN
+
 # Item localizations
 # item.cubeworks:example.name=Example Item
 
@@ -6,3 +24,5 @@
 
 # Creative Tab localization
 itemGroup.cubeworks=CubeWorks
+
+# testy.message=TESTY

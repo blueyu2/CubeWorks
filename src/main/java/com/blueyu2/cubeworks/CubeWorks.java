@@ -1,11 +1,15 @@
 package com.blueyu2.cubeworks;
 
+import com.blueyu2.cubeworks.handler.ChatHandler;
 import com.blueyu2.cubeworks.handler.ConfigurationHandler;
 import com.blueyu2.cubeworks.init.ModBlocks;
 import com.blueyu2.cubeworks.init.ModItems;
+import com.blueyu2.cubeworks.utility.LogHelper;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.common.MinecraftForge;
 
 /**
  * Created by Blueyu2 on 8/11/2014.
@@ -27,5 +31,11 @@ public class CubeWorks {
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
         ModItems.init();
         ModBlocks.init();
+        MinecraftForge.EVENT_BUS.register(new ChatHandler());
+    }
+
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent event){
+        FMLCommonHandler.instance().bus().register(new ChatHandler());
     }
 }
